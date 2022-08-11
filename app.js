@@ -25,7 +25,12 @@ function createGrid(gridNumber){
 
 createGrid(gridNumber);
 
-
+// change background color when mouseover
+containerDiv.addEventListener("mouseover", (e) =>{
+    if (e.target.classList.contains("square")) {
+      e.target.style.backgroundColor = "purple";
+    }
+})
 
 
 
