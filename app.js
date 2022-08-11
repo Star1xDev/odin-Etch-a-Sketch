@@ -6,12 +6,14 @@ const containerHeight = containerDiv.offsetHeight;
 // number of div per side for the grid
 let gridNumber = 16;
 
-// calculate the width and height for the divs
-let squareWidth = containerWidth / gridNumber;
-let squareHeight = containerHeight / gridNumber;
+
 
 // function to  create square divs with the height and width from before and appending to container //
 function createGrid(gridNumber){
+  containerDiv.textContent = "";
+  // calculate the width and height for the divs
+  let squareWidth = containerWidth / gridNumber;
+  let squareHeight = containerHeight / gridNumber;
   let i = 0;
   while (i < gridNumber * gridNumber) {
     let squareDiv = document.createElement("div");
@@ -24,6 +26,22 @@ function createGrid(gridNumber){
 }
 
 createGrid(gridNumber);
+
+// refrence for changeGridBtn
+const changeGridBtn = document.querySelector(".changeGridBtn");
+
+// ask user for number of squared he wants
+changeGridBtn.addEventListener("click", () => {
+  let userInput = prompt("how many squares?");
+  gridNumber = parseInt(userInput);
+
+  // if user input is more than 100 set 100
+  if(gridNumber > 100){
+    alert("sorry max is 100!\n setting grid to 100..");
+    gridNumber = 100;
+  }
+  createGrid(gridNumber);
+})
 
 // change background color when mouseover
 containerDiv.addEventListener("mouseover", (e) =>{
