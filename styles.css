@@ -9,10 +9,18 @@ body{
 }
 
 .container{
-  width: 95%;
-  max-width: 960px;
+  width: 960px;
+  max-width: 95%;
   height: 100vh;
   margin: 0 auto;
   background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: clip;
 }
 
+/*.square:hover{
+  background: red;
+}*/
