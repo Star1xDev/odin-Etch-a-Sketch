@@ -43,10 +43,21 @@ changeGridBtn.addEventListener("click", () => {
   createGrid(gridNumber);
 })
 
+// function to generate random rgb value
+function randomColor(){
+
+  let h = Math.floor(Math.random() * 361);
+  let s = Math.floor(Math.random() * 101);
+  let l = Math.floor(Math.random() * 101);
+  let color = `hsla(${h},${s}%,${l}%)`;
+  return color;
+
+}
+
 // change background color when mouseover
 containerDiv.addEventListener("mouseover", (e) =>{
     if (e.target.classList.contains("square")) {
-      e.target.style.backgroundColor = "purple";
+      e.target.style.backgroundColor = randomColor();
     }
 })
 
